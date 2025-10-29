@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doe Agora - Família Solidária</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">&#128153; Família Solidária</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projetos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="doe.html" class="active">Doe Agora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-page">
+        <div class="hero-content">
+            <h1>Doe e Transforme Vidas</h1>
+            <p>Contribua para apoiar famílias em situação de vulnerabilidade. Cada doação faz a diferença!</p>
+            <a href="#formDoacao" class="btn-primary">Fazer Doação</a>
+        </div>
+    </section>
+
+    <!-- Sobre Doação -->
+    <section class="about">
+        <h2>Como Sua Doação Ajuda</h2>
+        <p>Com sua contribuição, conseguimos fornecer:</p>
+        <ul>
+            <li>Alimentos e cestas básicas</li>
+            <li>Materiais escolares para crianças</li>
+            <li>Atendimento psicossocial e acompanhamento familiar</li>
+            <li>Capacitação e oficinas educativas</li>
+        </ul>
+    </section>
+
+    <!-- Formulário de Doação -->
+    <section class="signup-section" id="formDoacao">
+        <h2>Formulário de Doação</h2>
+        <form id="doacaoForm" onsubmit="handleDoacao(event)">
+            <fieldset>
+                <legend>Dados do Doador</legend>
+                <div class="form-group">
+                    <label for="nomeDoador">Nome Completo *</label>
+                    <input type="text" id="nomeDoador" name="nomeDoador" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailDoador">E-mail *</label>
+                    <input type="email" id="emailDoador" name="emailDoador" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefoneDoador">Telefone</label>
+                    <input type="tel" id="telefoneDoador" name="telefoneDoador" placeholder="(11) 99999-9999">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações da Doação</legend>
+                <div class="form-group">
+                    <label for="tipoDoacao">Tipo de Doação *</label>
+                    <select id="tipoDoacao" name="tipoDoacao" required>
+                        <option value="">Selecione...</option>
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="alimentos">Alimentos</option>
+                        <option value="roupas">Roupas</option>
+                        <option value="material-escolar">Material Escolar</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="valorDoacao">Valor ou Quantidade *</label>
+                    <input type="text" id="valorDoacao" name="valorDoacao" placeholder="Ex: R$100 ou 5 kg de arroz" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagemDoacao">Mensagem (opcional)</label>
+                    <textarea id="mensagemDoacao" name="mensagemDoacao" placeholder="Deseja deixar alguma mensagem?"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn-primary">Enviar Doação</button>
+            <div class="success-message" id="successDoacao">✅ Doação registrada com sucesso! Entraremos em contato em breve.</div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Família Solidária. Todos os direitos reservados.</p>
+        <p>Feito com ❤️ para transformar vidas</p>
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        function handleDoacao(event){
+            event.preventDefault();
+            document.getElementById('successDoacao').style.display = 'block';
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
